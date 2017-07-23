@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+
+%:
+	dh $@
+
+#Building manpages
+override_dh_installman:
+	ronn -r $(CURDIR)/debian/libecc.8.ronn
+	dh_installman
+

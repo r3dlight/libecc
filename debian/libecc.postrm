@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+	purge)
+		deluser --quiet curvedns >/dev/null || true
+		rm -rf /var/lib/curvedns
+		rm -f /etc/curvedns/README /etc/curvedns/curvedns_private_key.hex
+		;;
+esac
+
+#DEBHELPER#
+
+
+

@@ -1,0 +1,35 @@
+Source: libecc
+Section: net
+Priority: extra
+Maintainer: Debian Security Tools Packaging Team <pkg-security-team@lists.alioth.debian.org>
+Uploaders: NEVEU Stephane <stefneveu@gmail.com>
+Build-Depends:
+ debhelper (>=10),
+ ruby-ronn,
+Homepage: http://www.ssi.gouv.fr/
+Standards-Version: 4.0.0
+Vcs-Git: https://anonscm.debian.org/git/pkg-security/libecc.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-security/libecc.git/
+
+Package: libecc
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lsb-base
+Architecture: any
+Description: 
+ C library for elliptic curves based cryptography (ECC).
+ .
+ This software implements a library for elliptic curves based
+ cryptography (ECC). 
+ The API supports signature algorithms specified in the ISO 14888-3:2016 
+ standard, with the following specific curves and hash functions:
+ .
+ * Signatures: ECDSA, ECKCDSA, ECGDSA, ECRDSA, EC{,O}SDSA, ECFSDSA.
+ .
+ * Curves: SECP{224,256,384,521}R1, BRAINPOOLP{224,256,384,512}R1, 
+ FRP256V1, GOST{256,512}. 
+ The library can be easily expanded with user defined curves using a
+ standalone helper script.
+ .
+ * Hash functions: SHA-2 and SHA-3 hash functions (224, 256, 384, 512).
