@@ -1,4 +1,4 @@
 version=4
-   https://github.com/curvedns/curvedns/tags \
-   (?:.*?/)?curvedns-?(\d[\d.]*)\.tar\.gz debian uupdate
+   https://github.com/ANSSI-FR/libecc tags \
+   (?:.*?/)?libecc-?(\d[\d.]*)\.tar\.gz debian uupdate
 
