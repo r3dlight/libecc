@@ -15,7 +15,6 @@ Package: libecc
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
- lsb-base
 Architecture: any
 Description: 
  C library for elliptic curves based cryptography (ECC).
