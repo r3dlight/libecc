@@ -1,4 +1,4 @@
-libecc (0.1-1) unstable; urgency=medium
+libecc (1.0-1) unstable; urgency=medium
 
   * Initial release (Closes: #655220)
 
