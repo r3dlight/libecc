@@ -1,4 +1,4 @@
-version=4
-   https://github.com/ANSSI-FR/libecc tags \
-   (?:.*?/)?libecc-?(\d[\d.]*)\.tar\.gz debian uupdate
+version=3
 
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/libecc-$1\.tar\.gz/ \
+  https://github.com/ANSSI-FR/libecc/tags .*/v?(\d\S*)\.tar\.gz
