@@ -109,7 +109,7 @@ endif
 ifndef USER_DEFINED_LDFLAGS
 BIN_LDFLAGS ?= $(LDFLAGS) $(FPIE_LDFLAGS)
 else
-BIN_LDFLAGS ?= $(LDFLAGS)
+BIN_LDFLAGS ?= $(USER_DEFINED_LDFLAGS)
 endif
 
 # Static libraries to produce or link to
@@ -123,6 +123,6 @@ ifeq ($(WITH_DYNAMIC_LIBS),1)
 LIBARITH_DYN = $(BUILD_DIR)/libarith.so
 LIBEC_DYN = $(BUILD_DIR)/libec.so
 LIBSIGN_DYN = $(BUILD_DIR)/libsign.so
-# The flag to generate shared librarie
-LIB_DYN_CFLAGS ?= -shared -Wl,-z,relro,-z,now
+# The ld flags to generate shared librarie
+LIB_DYN_LDFLAGS ?= -shared -Wl,-z,relro,-z,now
 endif

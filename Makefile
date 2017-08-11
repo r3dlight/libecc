@@ -20,11 +20,13 @@ ifeq ($(WITH_DYNAMIC_LIBS),1)
 TESTS_EXEC += $(BUILD_DIR)/ec_self_tests_dyn $(BUILD_DIR)/ec_utils_dyn
 endif
 
+EXEC_TO_CLEAN = $(BUILD_DIR)/ec_self_tests $(BUILD_DIR)/ec_utils $(BUILD_DIR)/ec_self_tests_dyn $(BUILD_DIR)/ec_utils_dyn
+
 # all and clean, as you might expect
 all: depend $(LIBS) $(TESTS_EXEC)
 
 clean:
-	@rm -f $(LIBS) $(TESTS_EXEC)
+	@rm -f $(LIBS) $(EXEC_TO_CLEAN)
 	@find -name '*.o' -exec rm -f '{}' \;
 	@find -name '*.d' -exec rm -f '{}' \;
 	@find -name '*.a' -exec rm -f '{}' \;
@@ -107,7 +109,7 @@ $(LIBARITH): $(LIBARITH_OBJECTS)
 # Compile dynamic libraries if the user asked to
 ifeq ($(WITH_DYNAMIC_LIBS),1)
 $(LIBARITH_DYN): $(LIBARITH_OBJECTS)
-	$(CC) $(LIB_DYN_CFLAGS) $^ -o $@
+	$(CC) $(LIB_CFLAGS) $(LIB_DYN_LDFLAGS) $^ -o $@
 endif
 
 # curve module
@@ -131,7 +133,7 @@ $(LIBEC): $(LIBEC_OBJECTS)
 # Compile dynamic libraries if the user asked to
 ifeq ($(WITH_DYNAMIC_LIBS),1)
 $(LIBEC_DYN): $(LIBEC_OBJECTS)
-	$(CC) $(LIB_DYN_CFLAGS) $^ -o $@
+	$(CC) $(LIB_CFLAGS) $(LIB_DYN_LDFLAGS) $^ -o $@
 endif
 
 # Hash module
@@ -179,7 +181,7 @@ $(LIBSIGN): $(LIBSIGN_OBJECTS)
 # Compile dynamic libraries if the user asked to
 ifeq ($(WITH_DYNAMIC_LIBS),1)
 $(LIBSIGN_DYN): $(LIBSIGN_OBJECTS)
-	$(CC) $(LIB_DYN_CFLAGS) $^ -o $@
+	$(CC) $(LIB_CFLAGS) $(LIB_DYN_LDFLAGS) $^ -o $@
 endif
 
 # Test elements (objects and binaries)
