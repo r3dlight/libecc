@@ -1,0 +1,2 @@
+build/libarith.a /usr/include/libecc/
+build/lib*.a /usr/lib/*/lib*.a

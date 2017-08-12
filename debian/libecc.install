@@ -1,0 +1,7 @@
+build/ec_self_tests_dyn /usr/sbin/ec_self_tests_dyn
+build/ec_self_tests /usr/sbin/ec_self_tests
+build/ec_utils /usr/sbin/ec_utils
+build/ec_utils_dyn /usr/sbin/ec_utils_dyn
+build/libec.so /usr/lib/*/libec.so
+build/libarith.so /usr/lib/*/libarith.so
+build/libsign.so /usr/lib/*/libsign.so

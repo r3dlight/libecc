@@ -1,0 +1,11 @@
+--- a/common.mk
++++ b/common.mk
+@@ -104,7 +104,7 @@
+ LIB_CFLAGS  ?= $(CFLAGS) $(FPIC_CFLAG) -ffreestanding
+ else
+ BIN_CFLAGS  ?= $(USER_DEFINED_CFLAGS)
+-LIB_CFLAGS  ?= $(USER_DEFINED_CFLAGS)
++LIB_CFLAGS  ?= $(USER_DEFINED_CFLAGS) $(FPIC_CFLAG)
+ endif
+ ifndef USER_DEFINED_LDFLAGS
+ BIN_LDFLAGS ?= $(LDFLAGS) $(FPIE_LDFLAGS)
